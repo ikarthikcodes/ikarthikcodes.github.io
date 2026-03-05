@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Karthik | Writeups</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #0d1117;
+    color: white;
+    overflow-x: hidden;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Navbar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(13,17,23,0.95);
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 18px 0;
+    border-bottom: 1px solid #2a2f36;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #c6ff00;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 180px 20px 60px 20px;
+}
+
+.header h1 {
+    font-size: 42px;
+}
+
+.highlight {
+    color: #c6ff00;
+}
+
+/* Writeup List */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px 100px 20px;
+}
+
+.writeup {
+    background: #161b22;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    border: 1px solid #2a2f36;
+    transition: 0.3s ease;
+}
+
+.writeup:hover {
+    border-color: #c6ff00;
+    transform: translateY(-4px);
+}
+
+.writeup h3 {
+    color: #c6ff00;
+    margin-bottom: 10px;
+}
+
+.writeup p {
+    color: #ccc;
+    font-size: 14px;
+}
+
+.tags {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #888;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 16px;
+    border: 1px solid #c6ff00;
+    color: #c6ff00;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #c6ff00;
+    color: black;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+}
+</style>
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="writeups.html">Writeups</a>
+</nav>
+
+<div class="header">
+    <h1>Security Writeups</h1>
+    <p>CTF solutions, vulnerability analysis & learning notes</p>
+</div>
+
+<div class="container">
+
+    <div class="writeup">
+        <h3>TryHackMe — Blue Room</h3>
+        <p>Exploited EternalBlue vulnerability, gained SYSTEM access and analyzed SMB exploit chain.</p>
+        <div class="tags">Windows • SMB • Privilege Escalation</div>
+        <a href="blue-room.html" class="button">Read Writeup</a>
+    </div>
+
+    <div class="writeup">
+        <h3>HackTheBox — Lame</h3>
+        <p>Enumeration of Samba vulnerability leading to remote code execution and root compromise.</p>
+        <div class="tags">Linux • Samba • RCE</div>
+        <a href="htb-lame.html" class="button">Read Writeup</a>
+    </div>
+
+    <div class="writeup">
+        <h3>Web Exploitation Practice</h3>
+        <p>Identified SQL injection vulnerability and demonstrated data extraction via manual payload crafting.</p>
+        <div class="tags">Web • SQL Injection • Burp Suite</div>
+        <a href="web-sqli.html" class="button">Read Writeup</a>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Karthik | Security Writeups
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<script>
+particlesJS("particles-js", {
+  "particles": {
+    "number": { "value": 50 },
+    "color": { "value": "#888888" },
+    "shape": { "type": "circle" },
+    "opacity": { "value": 0.2 },
+    "size": { "value": 2 },
+    "line_linked": {
+      "enable": true,
+      "distance": 120,
+      "color": "#aaaaaa",
+      "opacity": 0.2,
+      "width": 1
+    },
+    "move": { "enable": true, "speed": 1 }
+  },
+  "retina_detect": true
+});
+</script>
+
+</body>
+</html>
