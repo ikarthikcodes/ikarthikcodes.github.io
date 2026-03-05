@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TryHackMe | Karthik</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #0d1117;
+    color: white;
+}
+
+/* Navbar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(13,17,23,0.95);
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 18px 0;
+    border-bottom: 1px solid #2a2f36;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #c6ff00;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 160px 20px 80px 20px;
+}
+
+.hero h1 {
+    font-size: 42px;
+}
+
+.highlight {
+    color: #c6ff00;
+}
+
+.hero p {
+    color: #aaa;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+/* Container */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Stats */
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 60px 0;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    background: #161b22;
+    padding: 25px;
+    border-radius: 10px;
+    width: 220px;
+    text-align: center;
+    border: 1px solid #2a2f36;
+}
+
+.stat-card h2 {
+    color: #c6ff00;
+    font-size: 32px;
+    margin: 0;
+}
+
+/* Section */
+.section {
+    margin: 80px 0;
+}
+
+.section h2 {
+    text-align: center;
+    color: #c6ff00;
+    margin-bottom: 40px;
+}
+
+/* Cards */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: #161b22;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #2a2f36;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #c6ff00;
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+.card a {
+    text-decoration: none;
+    color: #c6ff00;
+    font-size: 14px;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #c6ff00;
+    color: black;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="writeups.html">Writeups</a>
+    <a href="tryhackme.html">TryHackMe</a>
+</nav>
+
+<div class="hero">
+    <h1>My <span class="highlight">TryHackMe</span> Journey</h1>
+    <p>Hands-on cybersecurity labs covering penetration testing, privilege escalation, Active Directory, and real-world attack simulations.</p>
+    <a href="https://tryhackme.com/p/yourusername" target="_blank" class="btn">View My Profile</a>
+</div>
+
+<div class="container">
+
+<div class="stats">
+    <div class="stat-card">
+        <h2>120+</h2>
+        <p>Rooms Completed</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>Top 5%</h2>
+        <p>Global Rank</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>15+</h2>
+        <p>Writeups Published</p>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Categories Covered</h2>
+
+    <div class="card-grid">
+        <div class="card">
+            <h3>Web Exploitation</h3>
+            <p>SQLi, XSS, file upload bypass, authentication flaws.</p>
+        </div>
+
+        <div class="card">
+            <h3>Privilege Escalation</h3>
+            <p>Linux & Windows privilege escalation techniques.</p>
+        </div>
+
+        <div class="card">
+            <h3>Active Directory</h3>
+            <p>AD attacks, Kerberos abuse, lateral movement.</p>
+        </div>
+
+        <div class="card">
+            <h3>Networking</h3>
+            <p>Nmap scanning, enumeration, pivoting techniques.</p>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Featured Rooms</h2>
+
+    <div class="card-grid">
+        <div class="card">
+            <h3>Blue</h3>
+            <p>SMB exploitation using EternalBlue.</p>
+            <a href="blue-room.html">Read Writeup →</a>
+        </div>
+
+        <div class="card">
+            <h3>Basic Pentesting</h3>
+            <p>Enumeration and Linux privilege escalation.</p>
+            <a href="#">Read Writeup →</a>
+        </div>
+
+        <div class="card">
+            <h3>Attacktive Directory</h3>
+            <p>Real-world Active Directory attack simulation.</p>
+            <a href="#">Read Writeup →</a>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<footer>
+    © 2026 Karthik | TryHackMe Portfolio
+</footer>
+
+</body>
+</html>
