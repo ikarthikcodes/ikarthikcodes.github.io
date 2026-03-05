@@ -11,8 +11,10 @@ body {
     font-family: 'Inter', sans-serif;
     background: #0d1117;
     color: white;
+    overflow-x: hidden;
 }
 
+/* Particles */
 #particles-js {
     position: fixed;
     width: 100%;
@@ -20,51 +22,104 @@ body {
     z-index: -1;
 }
 
+/* Navigation */
 nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(13,17,23,0.95);
+    backdrop-filter: blur(6px);
     display: flex;
     justify-content: center;
     gap: 40px;
-    padding: 20px;
-    background: #11161c;
+    padding: 18px 0;
     border-bottom: 1px solid #2a2f36;
+    z-index: 1000;
 }
 
 nav a {
     color: white;
     text-decoration: none;
     font-weight: 500;
+    transition: 0.3s;
 }
 
 nav a:hover {
     color: #c6ff00;
 }
 
-header {
+/* Hero */
+.hero {
     text-align: center;
-    padding: 140px 20px;
+    padding: 200px 20px 120px 20px;
 }
 
-h1 {
-    font-size: 48px;
+.hero h1 {
+    font-size: 52px;
+    margin-bottom: 15px;
 }
 
 .highlight {
     color: #c6ff00;
 }
 
+.hero p {
+    font-size: 18px;
+    color: #aaa;
+}
+
 .button {
     display: inline-block;
     margin-top: 30px;
-    padding: 10px 20px;
+    padding: 12px 26px;
     border: 1px solid #c6ff00;
     color: #c6ff00;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 6px;
+    transition: 0.3s ease;
 }
 
 .button:hover {
     background: #c6ff00;
     color: black;
+}
+
+/* Cards Section */
+.section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 20px 100px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: #161b22;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #2a2f36;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: #c6ff00;
+}
+
+.card h3 {
+    color: #c6ff00;
+}
+
+.card p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #666;
 }
 </style>
 </head>
@@ -74,17 +129,56 @@ h1 {
 <div id="particles-js"></div>
 
 <nav>
+    <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="projects.html">Projects</a>
     <a href="writeups.html">Writeups</a>
     <a href="tryhackme.html">TryHackMe</a>
 </nav>
 
-<header>
+<!-- Hero Section -->
+<div class="hero">
     <h1>Hi, I'm <span class="highlight">Karthik</span></h1>
     <p>Cybersecurity Enthusiast | SOC | Offensive Security Explorer</p>
     <a class="button" href="projects.html">View My Work</a>
-</header>
+</div>
+
+<!-- Dashboard Cards -->
+<div class="section">
+
+    <a href="about.html" style="text-decoration:none;">
+        <div class="card">
+            <h3>About Me</h3>
+            <p>Background, skills, and cybersecurity journey.</p>
+        </div>
+    </a>
+
+    <a href="projects.html" style="text-decoration:none;">
+        <div class="card">
+            <h3>Projects</h3>
+            <p>Hands-on labs, SOC simulations & detection engineering.</p>
+        </div>
+    </a>
+
+    <a href="writeups.html" style="text-decoration:none;">
+        <div class="card">
+            <h3>Writeups</h3>
+            <p>CTF writeups, vulnerability analysis & research notes.</p>
+        </div>
+    </a>
+
+    <a href="tryhackme.html" style="text-decoration:none;">
+        <div class="card">
+            <h3>TryHackMe</h3>
+            <p>Rooms completed, badges earned & progress tracking.</p>
+        </div>
+    </a>
+
+</div>
+
+<footer>
+    © 2026 Karthik | Built with GitHub Pages
+</footer>
 
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
