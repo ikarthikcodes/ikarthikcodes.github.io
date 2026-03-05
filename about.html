@@ -1,34 +1,198 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>About | Karthik U</title>
+<title>Robert Willington | About</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
 <style>
-body { margin:0; font-family: 'Inter', sans-serif; background:#0d1117; color:white; }
-nav { display:flex; justify-content:center; gap:40px; padding:20px; background:#11161c; }
-nav a { color:white; text-decoration:none; }
-nav a:hover { color:#c6ff00; }
-.section { max-width:900px; margin:auto; padding:80px 20px; }
-h2 { color:#c6ff00; }
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #0d1117;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Particles Background */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(13, 17, 23, 0.9);
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    padding: 18px 0;
+    border-bottom: 1px solid #2a2f36;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 25px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #c6ff00;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 160px 20px 80px 20px;
+}
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+h2 {
+    color: #c6ff00;
+    border-bottom: 1px solid #2a2f36;
+    padding-bottom: 8px;
+}
+
+h3 {
+    color: #c6ff00;
+}
+
+.section {
+    max-width: 900px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+.skills span {
+    display: inline-block;
+    background: #1c2128;
+    padding: 8px 14px;
+    margin: 6px;
+    border-radius: 6px;
+    font-size: 14px;
+    border: 1px solid #2a2f36;
+}
+
+.project {
+    background: #161b22;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 1px solid #2a2f36;
+}
+
+a {
+    color: #c6ff00;
+    text-decoration: none;
+}
+
+a:hover {
+    text-shadow: 0 0 5px #c6ff00;
+}
 </style>
 </head>
+
 <body>
 
+<div id="particles-js"></div>
+
+<!-- Navigation -->
 <nav>
-<a href="index.html">Home</a>
-<a href="projects.html">Projects</a>
-<a href="writeups.html">Writeups</a>
-<a href="tryhackme.html">TryHackMe</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="writeups.html">Writeups</a>
+    <a href="tryhackme.html">TryHackMe</a>
 </nav>
 
+<header>
+    <h1>Robert Willington</h1>
+    <p>SOC Analyst | Cybersecurity Enthusiast</p>
+</header>
+
 <div class="section">
-<h2>About Me</h2>
-<p>
-Entry-level cybersecurity enthusiast with experience in SOC monitoring,
-log analysis, MITRE ATT&CK mapping, and hands-on lab simulations.
-</p>
+    <h2>About Me</h2>
+    <p>
+        Entry-level SOC analyst with hands-on experience in log analysis,
+        threat detection, incident response, and MITRE ATT&CK mapping.
+    </p>
 </div>
+
+<div class="section">
+    <h2>Skills</h2>
+    <div class="skills">
+        <span>Splunk</span>
+        <span>Wazuh</span>
+        <span>Suricata</span>
+        <span>Wireshark</span>
+        <span>Linux</span>
+        <span>MITRE ATT&CK</span>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Projects</h2>
+    <div class="project">
+        <h3>Host-Based Intrusion Detection Lab</h3>
+        <p>Built SOC lab detecting brute-force SSH attacks and correlating logs using Splunk.</p>
+    </div>
+
+    <div class="project">
+        <h3>Blockchain Certificate Verification System</h3>
+        <p>Developed blockchain-based certificate validation using Solidity and IPFS.</p>
+    </div>
+</div>
+
+<!-- Particles JS -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+<script>
+particlesJS("particles-js", {
+  "particles": {
+    "number": { "value": 80 },
+    "color": { "value": "#888888" },
+    "shape": { "type": "circle" },
+    "opacity": { "value": 0.4 },
+    "size": { "value": 2.5 },
+    "line_linked": {
+      "enable": true,
+      "distance": 130,
+      "color": "#aaaaaa",
+      "opacity": 0.3,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 1.2
+    }
+  },
+  "interactivity": {
+    "events": {
+      "onhover": { "enable": true, "mode": "grab" }
+    },
+    "modes": {
+      "grab": {
+        "distance": 140,
+        "line_linked": { "opacity": 0.5 }
+      }
+    }
+  },
+  "retina_detect": true
+});
+</script>
 
 </body>
 </html>
