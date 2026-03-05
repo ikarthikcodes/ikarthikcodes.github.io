@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SOC Detection Lab | Karthik</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #0d1117;
+    color: white;
+    overflow-x: hidden;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(13,17,23,0.95);
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 18px 0;
+    border-bottom: 1px solid #2a2f36;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #c6ff00;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 180px 20px 60px 20px;
+}
+
+.header h1 {
+    font-size: 42px;
+}
+
+.highlight {
+    color: #c6ff00;
+}
+
+/* Content Sections */
+.section {
+    max-width: 900px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+.section h2 {
+    color: #c6ff00;
+    border-bottom: 1px solid #2a2f36;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+.section p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* Tech Stack */
+.tech {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #888;
+}
+
+/* Screenshot Styling */
+.screenshot {
+    margin-top: 25px;
+    border: 1px solid #2a2f36;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.screenshot img {
+    width: 100%;
+    display: block;
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 22px;
+    border: 1px solid #c6ff00;
+    color: #c6ff00;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #c6ff00;
+    color: black;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+}
+</style>
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+</nav>
+
+<div class="header">
+    <h1>SOC <span class="highlight">Detection Lab</span></h1>
+    <p>Brute-force detection, log correlation & MITRE ATT&CK mapping</p>
+</div>
+
+<!-- Overview -->
+<div class="section">
+    <h2>Project Overview</h2>
+    <p>
+        Built a home SOC lab to simulate brute-force SSH attacks and detect them 
+        using Wazuh and Splunk. The objective was to analyze logs, create alert rules,
+        and map attack techniques to MITRE ATT&CK.
+    </p>
+
+    <div class="tech">
+        Tools Used: Wazuh • Splunk • Ubuntu • Kali Linux • MITRE ATT&CK
+    </div>
+
+    <a href="https://github.com/ikarthikcodes/soc-detection-lab" 
+       target="_blank" 
+       class="button">
+       View on GitHub
+    </a>
+</div>
+
+<!-- Lab Architecture -->
+<div class="section">
+    <h2>Lab Architecture</h2>
+    <p>
+        The lab consisted of a Kali attacker machine and a vulnerable Ubuntu server.
+        Logs were forwarded to Wazuh manager and visualized in Splunk for analysis.
+    </p>
+
+    <div class="screenshot">
+        <img src="images/lab-architecture.png" alt="Lab Architecture Diagram">
+    </div>
+</div>
+
+<!-- Attack Simulation -->
+<div class="section">
+    <h2>Attack Simulation</h2>
+    <p>
+        Simulated SSH brute-force attack using Hydra from Kali Linux.
+        Observed failed login attempts and analyzed authentication logs.
+    </p>
+
+    <div class="screenshot">
+        <img src="images/bruteforce-log.png" alt="Brute Force Logs">
+    </div>
+</div>
+
+<!-- Detection & MITRE Mapping -->
+<div class="section">
+    <h2>Detection & MITRE Mapping</h2>
+    <p>
+        Created custom alert rules to detect repeated failed SSH attempts.
+        Mapped activity to:
+    </p>
+
+    <ul style="color:#ccc;">
+        <li>T1110 — Brute Force</li>
+        <li>T1021 — Remote Services</li>
+    </ul>
+
+    <div class="screenshot">
+        <img src="images/splunk-alert.png" alt="Splunk Alert Dashboard">
+    </div>
+</div>
+
+<footer>
+    © 2026 Karthik | SOC Case Study
+</footer>
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+<script>
+particlesJS("particles-js", {
+  "particles": {
+    "number": { "value": 50 },
+    "color": { "value": "#888888" },
+    "shape": { "type": "circle" },
+    "opacity": { "value": 0.2 },
+    "size": { "value": 2 },
+    "line_linked": {
+      "enable": true,
+      "distance": 120,
+      "color": "#aaaaaa",
+      "opacity": 0.2,
+      "width": 1
+    },
+    "move": { "enable": true, "speed": 1 }
+  },
+  "retina_detect": true
+});
+</script>
+
+</body>
+</html>
