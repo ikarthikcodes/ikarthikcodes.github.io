@@ -269,10 +269,13 @@ footer{
 
 <!-- PARTICLES JS -->
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
 <script>
+
+function loadParticles(){
 particlesJS("particles-js", {
   particles:{
-    number:{value:80},
+    number:{value:70},
     color:{value:"#888888"},
     shape:{type:"circle"},
     opacity:{value:0.4},
@@ -284,8 +287,18 @@ particlesJS("particles-js", {
     events:{onhover:{enable:true,mode:"grab"}},
     modes:{grab:{distance:140,line_linked:{opacity:0.5}}}
   },
-  retina_detect:true
+  retina_detect:false
 });
+}
+
+loadParticles();
+
+/* reload particles if viewport changes (desktop mode switch) */
+window.addEventListener("resize", function(){
+  document.getElementById("particles-js").innerHTML="";
+  loadParticles();
+});
+
 
 /* ==================== DARK/LIGHT TOGGLE ==================== */
 if(localStorage.getItem("theme") === "light"){
@@ -300,8 +313,8 @@ function toggleMode(){
     localStorage.setItem("theme","dark");
   }
 }
+
 </script>
 
 </body>
-
 </html>
