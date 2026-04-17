@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Writeups</title>
+<title>Projects</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -13,7 +13,7 @@
   --text:white;
   --accent:#c6ff00;
   --card:#161b22;
-  --tag:#697c96;
+  --tag:#697C96;
   --border:#2a2f36;
 }
 
@@ -120,47 +120,49 @@ nav{
   color:var(--accent);
 }
 
-/* ==================== WRITEUPS ==================== */
-.container{
-  max-width:900px;
+/* ==================== PROJECTS GRID ==================== */
+.projects-container{
+  max-width:1100px;
   margin:auto;
   padding:40px 20px 100px 20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:25px;
 }
 
-.writeup{
+.project-card{
   background:var(--card);
   padding:25px;
-  margin-bottom:25px;
-  border-radius:8px;
+  border-radius:10px;
   border:1px solid var(--border);
   transition:0.3s ease;
 }
 
-.writeup:hover{
+.project-card:hover{
+  transform:translateY(-6px);
   border-color:var(--accent);
-  transform:translateY(-4px);
 }
 
-.writeup h3{
+.project-card h3{
   color:var(--accent);
   margin-bottom:10px;
 }
 
-.writeup p{
+.project-card p{
   color:var(--text);
   opacity:0.8;
   font-size:14px;
+  margin-bottom:15px;
 }
 
-.tags{
-  margin-top:10px;
+.tech{
   font-size:12px;
   color:var(--tag);
+  margin-bottom:15px;
 }
 
 .button{
   display:inline-block;
-  margin-top:15px;
   padding:8px 16px;
   border:1px solid var(--accent);
   color:var(--accent);
@@ -213,7 +215,6 @@ footer{
     <a href="writeups.html">Writeups</a>
     <a href="mylearning.html">My Learning</a>
     <a href="cert.html">Certifications & Achievements</a>
-
   </div>
   <div class="socials">
     <a href="https://www.linkedin.com/in/karthik-u-/" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -225,41 +226,39 @@ footer{
 
 <!-- HEADER -->
 <div class="header">
-  <h1>Security Writeups</h1>
-  <p>CTF solutions, vulnerability analysis & learning notes</p>
+  <h1>My Projects</h1>
+  <p>Hands-on cybersecurity labs and security engineering work</p>
 </div>
 
-<!-- WRITEUPS LIST -->
-<div class="container">
-
-  <div class="writeup">
-    <h3>TryHackMe — Smol</h3>
-    <p>Exploited a vulnerable WordPress plugin</p>
-    <div class="tags">Linux • LFI • Privilege Escalation</div>
-    <a href="https://medium.com/@karthiku226/tryhackme-smol-83bc2f9e15cf" class="button">Read Writeup</a>
+<!-- PROJECTS GRID -->
+<div class="projects-container">
+  <div class="project-card">
+    <h3>🔐 SOC Detection Lab</h3>
+    <p>Built a home SOC lab detecting brute-force attacks using Wazuh and Splunk. Implemented alert correlation and MITRE ATT&CK mapping.</p>
+    <div class="tech">Wazuh • Splunk • Linux • MITRE ATT&CK</div>
+    <a href="soc-lab.html" class="button">View Details</a>
   </div>
 
-  <div class="writeup">
-    <h3>TryHackMe — Airplane</h3>
-    <p>Enumeration of web services leading to Local File Inclusion (LFI), process discovery via /proc, exploitation of gdbserver, and privilege escalation to root.</p>
-    <div class="tags">Linux • LFI • Privilege Escalation</div>
-    <a href="https://medium.com/@karthiku226/tryhackme-airplane-writeup-64d881b34aff" class="button">Read Writeup</a>
+<div class="project-card">
+    <h3>🛡 Reverse Shell Detection using eBPF</h3>
+    <p>Designed a behavior-based detection system to identify reverse shell attacks using Tetragon with kernel-level observability and Splunk correlation.</p>
+    <div class="tech">eBPF • Tetragon • Splunk • Linux Security</div>
+    <a href="https://github.com/ikarthikcodes/Reverse-Shell-Detection-using-eBPF/blob/main/report.pdf" class="button">View Details</a>
+</div>
+
+  <div class="project-card">
+    <h3>📁 File Hash Verifier</h3>
+    <p>A simple hash verifier for files downloaded from internet</p>
+    <div class="tech">Python • Hash • Cryptography </div>
+    <a href="https://github.com/ikarthikcodes/File-hash-verifier" class="button">View Details</a>
   </div>
 
-  <div class="writeup">
-   <h3>TryHackMe — Takeover</h3>
-   <p>Performed subdomain enumeration and discovered hidden domains via ffuf. Identified additional DNS entries through SSL certificate inspection to capture the flag.</p>
-   <div class="tags">Web • Subdomain Enumeration • FFUF • SSL</div>
-   <a href="https://medium.com/@karthiku226/tryhackme-takeover-writeup-d1362896d5ec" class="button">Read Writeup</a>
+  <div class="project-card">
+    <h3>🌐 Blockchain Certificate Verification</h3>
+    <p>Developed a decentralized certificate verification system using smart contracts and IPFS storage.</p>
+    <div class="tech">Solidity • IPFS • Web3</div>
+    <a href="#" class="button">View Details</a>
   </div>
-
-  <div class="writeup">
-   <h3>TryHackMe — Lookup</h3>
-   <p>Enumerated valid usernames using ffuf and performed password brute-force with Hydra. Exploited an elFinder vulnerability to gain a reverse shell, leveraged PATH hijacking for privilege escalation, and abused sudo misconfiguration to obtain root access.</p>
-   <div class="tags">Web • FFUF • Hydra • LFI • Privilege Escalation</div>
-   <a href="https://medium.com/@karthiku226/tryhackme-lookup-writeup" class="button">Read Writeup</a>
-  </div>
-
 </div>
 
 <footer>
@@ -267,7 +266,7 @@ footer{
 </footer>
 
 <!-- PARTICLES JS -->
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
 particlesJS("particles-js", {
   particles:{
