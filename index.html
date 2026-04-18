@@ -241,6 +241,100 @@ padding-top:190px;
 
 }
 
+/* ==================== CONTACT ==================== */
+.floating-contact{
+  position:fixed;
+  bottom:30px;
+  right:25px;
+  z-index:999;
+}
+
+/* MAIN BUTTON */
+.main-btn{
+  width:55px;
+  height:55px;
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+  border:1px solid var(--border);
+
+  color:var(--accent);
+  font-size:22px;
+
+  cursor:pointer;
+  transition:0.3s;
+  box-shadow:0 0 10px rgba(0,0,0,0.4);
+}
+
+.main-btn:hover{
+  transform:scale(1.08);
+  border-color:var(--accent);
+  box-shadow:0 0 18px rgba(198,255,0,0.4);
+}
+
+/* OPTIONS CONTAINER */
+.contact-options{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+
+  margin-bottom:10px;
+
+  opacity:0;
+  pointer-events:none;
+  transform:translateY(20px);
+  transition:0.3s;
+}
+
+/* ACTIVE STATE */
+.floating-contact.active .contact-options{
+  opacity:1;
+  pointer-events:auto;
+  transform:translateY(0);
+}
+
+/* BUTTONS */
+.contact-options a{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+  border:1px solid var(--border);
+
+  color:var(--accent);
+  font-size:18px;
+
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.contact-options a:hover{
+  transform:scale(1.1);
+  border-color:var(--accent);
+  box-shadow:0 0 15px rgba(198,255,0,0.4);
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .floating-contact{
+    bottom:20px;
+    right:15px;
+  }
+}
+
+
 </style>
 </head>
 
@@ -334,7 +428,29 @@ View All Skills
 </div>
 
 </div> -->
+<div class="floating-contact">
 
+  <!-- Main Button -->
+  <div class="main-btn" onclick="toggleContact()">
+    <i class="fas fa-comment-dots"></i>
+  </div>
+
+  <!-- Hidden Options -->
+  <div class="contact-options">
+    <a href="https://wa.me/91YOURNUMBER" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <a href="mailto:yourmail@gmail.com">
+      <i class="fas fa-envelope"></i>
+    </a>
+
+    <a href="tel:+91YOURNUMBER">
+      <i class="fas fa-phone"></i>
+    </a>
+  </div>
+
+</div>
 <footer>
 © 2026 Karthik | Built with GitHub Pages
 </footer>
@@ -399,6 +515,10 @@ btn.innerText="Show Less";
 btn.innerText="View All Skills";
 }
 
+}
+
+function toggleContact(){
+  document.querySelector('.floating-contact').classList.toggle('active');
 }
 
 </script>
